@@ -1,0 +1,22 @@
+<div class="fluid-container p-1">
+    <form (submit)="changePassword($event)">
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput" name="tenantId" [(ngModel)]="tenantId">
+            <label for="floatingInput">Tenant Id</label>
+        </div>
+        
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="userName" [(ngModel)]="userName">
+            <label for="floatingInput">Email address</label>
+        </div>
+        
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        
+        <div class="mt-5 d-grid gap-2 d-md-flex justify-content-center" >
+            <button [disabled]="!(userName && password)" type="submit" class="btn btn-primary btn-lg" id="toastTrigger">ChangePassword</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="fluid-container p-1">
+    <form (submit)="login($event)">
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="userName" [(ngModel)]="userName">
+            <label for="floatingInput">Email address</label>
+        </div>
+        
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        
+        <div class="mt-5 d-grid gap-2 d-md-flex justify-content-center" >
+            <button [disabled]="!(userName && password)" type="submit" class="btn btn-primary btn-lg" id="toastTrigger">Login</button>
+        </div>
+    </form>
+
+    <div class="card" *ngIf="credentials">
+        <div *ngFor="let e of credentials">{{e.userName}} : {{e.password}}: {{e.tenantId}}</div>
+    </div>
+</div>
+    
+    <div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+    Hello, world! This is a toast message.
+   </div>
+    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+
+<div class="main">
+  <!-- <router-outlet></router-outlet> -->
+  <div *ngIf="app.isLoggedIn()">
+    <app-post-login-landing-page></app-post-login-landing-page>
+  </div>
+  <div *ngIf="!app.isLoggedIn()">
+    <app-landing-page></app-landing-page>
+  </div>
+  <!-- <router-outlet></router-outlet> -->
+</div>
