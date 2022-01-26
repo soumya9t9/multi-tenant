@@ -1,0 +1,111 @@
+$card-border-radius : 7px;
+[data-theme="dark"] {
+    --overlay-bg: #4d4d4d;
+}
+[data-theme="light"] {
+    --overlay-bg: #e8e8e8;
+}
+.header-text {
+    font-size: var(--section-heading-font);
+}
+.section-header {
+    font-size: var(--section-heading-font);
+    font-weight: bold;
+    color: var(--color-primary);
+}
+.heading-with-bg {
+    background-color: var(--color-primary);
+    color: white;
+    font-size: var(--section-heading-font);
+    font-weight: 500;
+}
+.card-heading-with-bg {
+    background: var(--color-primary);
+    color: white;//var(--text-primary);
+    font-size: var(--section-heading-font);
+    padding: 3px 10px;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    font-weight: 500;
+}
+.extented-bg {
+    width: 120%;
+    margin-left: -16px;
+}
+button, .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button, .mat-fab, .mat-mini-fab {
+    font-size: var(--small-font, 14px) !important;
+}
+.mat-card-subtitle, .mat-card-content {
+    font-size: var(--small-font, 14px) !important;
+}
+.mat-card-subtitle, .mat-card-content {
+    font-size: var(--small-font, 14px) !important;    
+}
+.normal-text {
+    font-size: var(--normal-font);
+}
+.mat-paginator, .mat-paginator-page-size .mat-select-trigger {
+    font-size: var(--xs-font);
+}
+.mat-card-inverse {
+	background: var(--text-primary);
+	color: var(--bg);
+}
+.text-small {
+    font-size: var(--xs-font);
+}
+.custom-error {
+    position: absolute;
+    transform: translateY(-50%);
+    font-size: var(--xs-font);
+}
+.flex-after::after {
+    content: "";
+    flex: 0 47% !important;
+    @media(min-width:992px) {
+        flex: 0 24.5% !important;
+        // max-width: 21% !important;
+    }
+    @media(min-width:768px) and (max-width: 991px){
+        flex: 0 22.5% !important;
+        // max-width: 23.5% !important;
+    }
+    @media(max-width:575px) {
+        display: none !important;   
+    }
+}
+.no-data{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px;
+}
+.router-link {
+    cursor: pointer;
+    font-size: var(--small-font);
+    color: white;
+    font-weight: bold;
+}
+.page-heading-wrapper {
+	border-bottom: 1px solid #999;
+    margin-top: 20px;
+    color: var(--text-primary);
+}
+.button-p900 {
+	background: var(--p900) !important;
+	color: white !important;
+}
+.page-heading {
+    font-size: var(--page-heading-font);
+    font-weight: 500;
+}
+.text-underline {
+    text-decoration: underline !important;
+}
+.card-border-radius {
+    border-radius: $card-border-radius !important; 
+}
+.heading-border-radius {
+    border-top-left-radius: $card-border-radius !important;
+    border-top-right-radius: $card-border-radius !important;
+}

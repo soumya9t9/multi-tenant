@@ -1,30 +1,95 @@
-<div class="fluid-container p-1">
-    <form (submit)="login($event)">
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="userName" [(ngModel)]="userName">
-            <label for="floatingInput">Email address</label>
-        </div>
-        
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" [(ngModel)]="password">
-            <label for="floatingPassword">Password</label>
-        </div>
-        
-        <div class="mt-5 d-grid gap-2 d-md-flex justify-content-center" >
-            <button [disabled]="!(userName && password)" type="submit" class="btn btn-primary btn-lg" id="toastTrigger">Login</button>
-        </div>
-    </form>
+<div class="container p-1">
+    <mat-card class="mt-5">
 
-    <div class="card" *ngIf="credentials">
-        <div *ngFor="let e of credentials">{{e.userName}} : {{e.password}}: {{e.tenantId}}</div>
-    </div>
+        <form (submit)="login($event)" class="row" [formGroup]="loginForm">
+            <div class="form-floating-2 mb-3 col-md-6">
+                <label for="floatingInput">Email</label>
+                <mat-form-field autocomplete="off" class="disabled-chips">
+                    <input matInput  type="email" class="form-control-2" id="floatingInput" placeholder=""
+                        name="userName" formControlName="userName">
+                        <mat-error class="padding-bottom">
+                            please provide valid email
+                        </mat-error>
+                </mat-form-field>
+            </div>
+
+            <div class="form-floating-2 col-md-6">
+                <label for="floatingPassword">Password</label>
+                <mat-form-field autocomplete="off" class="disabled-chips">
+                    <input matInput type="password" class="form-control-2" id="floatingPassword" placeholder="" name="password"
+                    formControlName="password">
+                        <mat-error class="padding-bottom">
+                            please provide valid password
+                        </mat-error>
+                </mat-form-field>
+            </div>
+
+            <esspl-dyn-form #dynForm *ngIf="extraForm" [formConfig]="formConfig"></esspl-dyn-form>
+
+            <div class="mt-5 d-grid gap-2 d-md-flex justify-content-center">
+                <button [disabled]="!(loginForm.valid && dynForm?.baseFG?.valid)" type="submit" class="btn btn-primary btn-lg"
+                    id="toastTrigger">Login</button>
+            </div>
+        </form>
+    </mat-card>
+
+    <mat-card class="my-5" *ngIf="credentials">
+        <mat-card-content>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>User Name</td>
+                    <td>Password</td>
+                    <td>TenantId</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tr *ngFor="let e of credentials">
+                <td> {{e.userName}} </td>
+                <td> {{e.password}} </td>
+                <td>{{e.tenantId}}</td>
+            </tr>
+        </table>
+
+
+    </mat-card-content>
+
+    </mat-card>
+
+    <mat-card class="my-5" *ngIf="tenantData">
+        <mat-card-content>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <td>TenantId</td>
+                    <td class="text-center" colspan="3">Form Fields</td>
+                    <!-- <td>Field Type</td> -->
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tr *ngFor="let e of tenantData">
+                <td>{{e.tenantId}}</td>
+                <td *ngFor="let eachField of e?.loginForm"> {{eachField.label}} - {{eachField.controlType}} </td>
+            </tr>
+        </table>
+
+        
+    </mat-card-content>
+
+    </mat-card>
 </div>
-    
-    <div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="d-flex">
-    <div class="toast-body">
-    Hello, world! This is a toast message.
-   </div>
-    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-  </div>
+
+<div id="liveToast" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+        <div class="toast-body">
+            Hello, world! This is a toast message.
+        </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
 </div>

@@ -1,0 +1,20 @@
+<div class="fluid-container">
+    <form [formGroup]="formGroup" *ngIf="formGroup" class="row mx-5">
+        
+        <mat-form-field>
+            <label> Config</label>
+            <textarea class="col-md-12" formControlName="config" matInput placeholder=""></textarea>
+        </mat-form-field>
+    
+        <div class="d-flex justify-content-center col-md-12">
+            <button type="click" class="btn btn-primary btn-lg col-md-1 justify-self-center" id="generateDyn" (click)="generateDynForm()">Submit</button>
+        </div>
+    </form>
+    
+    <div class="mt-5 mx-5">
+        <esspl-dyn-form (submitEvent)="onFormSubmit($event)" [formConfig]="formConfig" *ngIf="formConfig"></esspl-dyn-form>
+    </div>
+
+
+    <!-- <a href="/asstes/data/dynform.json">Download</a> -->
+</div>

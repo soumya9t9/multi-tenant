@@ -1,0 +1,98 @@
+{
+    "fusentic": [
+        {
+            "id": "DYN_THM",
+            "theme": "dynamic-theme",
+            "label": "DYN-1",
+            "isActive": true,
+            "primary": "#00FF00",
+            "accent": "#00FFFF",
+            "warn": "#FFFF00",
+            "toolBarBG": "#E6E6E6",
+            "toolBarText": "#FFFFFF",
+            "defaultThemeMode": "dark",
+            "onHover": "#EE1155",
+            "onSelect": "#EE1155"
+        }
+    ],
+    "ap-esspl": [
+        {
+            "id": "DYN_THM",
+            "theme": "dynamic-theme",
+            "label": "DYN-1",
+            "isActive": true,
+            "primary": "#701093",
+            "accent": "#0f9944",
+            "warn": "#84410b",
+            "toolBarBG": "#E6E6E6",
+            "toolBarText": "#FFFFFF",
+            "defaultThemeMode": "dark",
+            "onHover": "#1c0425",
+            "onSelect": "#1c0425"
+        }
+    ],
+    "ts-esspl": [
+        {
+            "id": "DYN_THM",
+            "theme": "dynamic-theme",
+            "label": "DYN-1",
+            "isActive": true,
+            "primary": "#84410b",
+            "accent": "#8b0941",
+            "warn": "#FFFF00",
+            "toolBarBG": "#E6E6E6",
+            "toolBarText": "#FFFFFF",
+            "defaultThemeMode": "dark",
+            "onHover": "#84410b",
+            "onSelect": "#84410b"
+        }
+    ],
+    "odisha-esspl-2": [
+        {
+            "id": "DYN_THM",
+            "theme": "dynamic-theme",
+            "label": "DYN-1",
+            "isActive": true,
+            "primary": "#E3D87E",
+            "accent": "#748067",
+            "warn": "#FFFF00",
+            "toolBarBG": "#bFbFbF",
+            "toolBarText": "#FFFFFF",
+            "defaultThemeMode": "light",
+            "onHover": "#fdac00",
+            "onSelect": "#fdac00"
+        }
+    ],
+    "bengal-esspl": [
+        {
+            "id": "DYN_THM",
+            "theme": "dynamic-theme",
+            "label": "DYN-1",
+            "isActive": true,
+            "accent": "#37392E",
+            "primary": "#28AFB0",
+            "warn": "#FFFF00",
+            "toolBarBG": "#104911",
+            "toolBarText": "#FFFFFF",
+            "defaultThemeMode": "light",
+            "onHover": "#0b576a",
+            "onSelect": "#0b576a"
+        }
+    ],
+    "bihar-esspl": [
+        {
+            "id": "DYN_THM",
+            "theme": "dynamic-theme",
+            "label": "DYN-1",
+            "isActive": true,
+            "primary": "#19647E",
+            "accent": "#DDCECD",
+            "warn": "#FFFF00",
+            "toolBarBG": "#A8D5E2",
+            "toolBarText": "#FFFFFF",
+            "defaultThemeMode": "light",
+            "onHover": "#274953",
+            "onSelect": "#274953"
+        }
+    ]
+}

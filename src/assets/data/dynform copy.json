@@ -1,0 +1,165 @@
+[
+
+    {
+        "label": "Nick Name",
+        "controlType": "INPUT",
+        "controlName": "nickName",
+        "value": null,
+        "maxLength": null,
+        "type": "text",
+        "min": null,
+        "validations": [
+            {
+                "name": "required",
+                "validator": "required",
+                "validatorClass": "Validators",
+                "errorMsg": "Please provide nick name"
+            }
+        ],
+        "readonly": null
+    },
+    {
+        "label": "about",
+        "controlType": "TEXT_AREA",
+        "controlName": "about",
+        "value": null,
+        "maxLength": null,
+        "type": "text",
+        "min": null,
+        "validations": [
+            {
+                "name": "required",
+                "validator": "required",
+                "validatorClass": "Validators",
+                "errorMsg": "Please provide about"
+            }
+        ],
+        "readonly": null
+    },
+
+    {
+        "label": "Emails",
+        "controlType": "FORMARRAY",
+        "controlName": "emails",
+        "value": null,
+        "maxLength": null,
+        "type": "REPEAT",
+        "min": null,
+        "formInputs": [
+            {
+                "label": "Email",
+                "controlType": "INPUT",
+                "controlName": "0",
+                "value": "example.esspl.com",
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide email"
+                    },
+                    {
+                        "name": "email",
+                        "validator": "email",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide valid email"
+                    }
+                ],
+                "readonly": null
+            },
+            {
+                "label": "Email 2",
+                "controlType": "INPUT",
+                "controlName": "1",
+                "value": "example.esspl.com",
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide email"
+                    },
+                    {
+                        "name": "email",
+                        "validator": "email",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide valid email"
+                    }
+                ],
+                "readonly": null
+            }
+        ]
+    },
+
+    {
+        "label": "addresses",
+        "controlType": "FORMARRAY",
+        "controlName": "addresses",
+        "value": null,
+        "maxLength": null,
+        "type": "REPEAT",
+        "min": null,
+        "formInputs": [
+            {
+                "label": "",
+                "controlType": "FORMGROUP",
+                "controlName": "0",
+                "formInputs": [
+                    {
+                        "label": "Street",
+                        "controlType": "INPUT",
+                        "controlName": "street",
+                        "value": null,
+                        "maxLength": null,
+                        "type": "text",
+                        "min": null,
+                        "validations": [
+                            {
+                                "name": "required",
+                                "validator": "required",
+                                "validatorClass": "Validators",
+                                "errorMsg": "Please provide street"
+                            }
+                        ],
+                        "readonly": null
+                    },
+                    {
+                        "label": "City",
+                        "controlType": "INPUT",
+                        "controlName": "city",
+                        "value": null,
+                        "maxLength": null,
+                        "type": "text",
+                        "min": null,
+                        "validations": [
+                            {
+                                "name": "required",
+                                "validator": "required",
+                                "validatorClass": "Validators",
+                                "errorMsg": "Please provide city"
+                            }
+                        ],
+                        "readonly": null
+                    }
+                ]
+            }
+        ]
+    },
+
+    {
+        "label": "Submit",
+        "controlType": "BUTTON",
+        "controlName": null,
+        "value": null,
+        "maxLength": null,
+        "type": "submit",
+        "min": null,
+        "disabled": false
+    }
+]

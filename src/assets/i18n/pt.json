@@ -1,0 +1,11 @@
+{
+    "_MAIN": {
+        "translate": "Vamos traduzir as informações mais importantes para sua navegação, compras e comunicações. Nossas traduções são fornecidos para sua conveniência. A versão em inglês do Amazon.com, incluindo nossas Condições de Uso, é a versão definitiva. Saiba mais"
+    },
+    "_HOME": {
+        "aboutMultiTenant": "Sobre vários locatários",
+        "descMultiTenant": "A multilocação é uma arquitetura na qual uma única instância de um aplicativo de software atende a vários clientes. Cada cliente é chamado de inquilino. ... Desta forma, um aplicativo de software em uma arquitetura multi-tenant pode compartilhar uma instância dedicada de configurações, dados, gerenciamento de usuários e outras propriedades.",
+        "dashboard": "Painéis",
+        "noDataFound": "Nenhum dado encontrado"
+    }
+}

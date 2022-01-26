@@ -1,0 +1,135 @@
+::ng-deep .carousel-indicators {
+    left: 0 !important;
+    transform: translateX(0) !important;
+}
+.section-desc {
+    line-height: 1.8;
+    font-size: var(--normal-font);
+}
+.dashboard-sec {
+    height:auto
+}
+.caurosel-wrapper {
+    height: 400px;
+}
+.banner-img-wrapper {
+    // height: 400px;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    // justify-content: space-around;
+    @media ( min-width:576px ) and (max-width:767px) {
+        justify-content: space-between;
+    }
+    @media(max-width:575px) {
+        justify-content: space-around;
+    }
+}
+.card-img {
+    height: 100%;
+    width: 100%;
+    // max-width: 200px;
+}
+.container-card {
+    overflow:hidden;
+}
+.centered {
+    margin: 0 auto;
+}
+.dash-card {
+    margin: 20px;
+    position:relative;
+    padding: 0;
+    padding-bottom: 25px;
+    flex: 0 0 calc( 25% - 20px)  !important;
+    @media(min-width:992px) {
+        max-width: calc( 25% - 20px) !important;
+    }
+    @media ( min-width:768px ) and (max-width:991px) {  
+        max-width: 31%;
+        flex: 0 0 calc( 31%) !important;
+    }
+    @media ( min-width:576px ) and (max-width:767px) {
+        flex: 1 0 45% !important;
+        max-width: 45%;
+    }
+    @media(max-width:575px) {
+        max-width: 235px;
+        flex: 1 0 calc( 607% ) !important;
+    }
+    .card-label {
+        text-align: center;
+        padding: 10px 5px 0 5px;
+    }
+}
+.img-card {
+    padding: 0;
+    border: 1px solid darkgray;
+    height: 100%;
+}
+.dash-card:hover {
+
+    .hover-overlay {
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        border-radius: 3px;
+        z-index: auto;
+        position: absolute;
+        left: 0;
+        top: 0;    
+    }
+    .dash-card-hover {
+        display: block;
+    }
+    .dash-card-hover-content {
+        display: block;
+        text-align: center;
+        padding: 3px;
+        z-index: 4;
+        margin: 0 auto;
+        width: fit-content;
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 40%;
+        font-weight: 400;
+        cursor: pointer;
+    }
+}
+.btn-boarder {
+    text-align: center;
+    padding: 3px 5px;
+    margin: 0 auto;
+    width: fit-content;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    // font-weight: 600;
+    cursor: pointer;
+}
+.dash-card-hover, .dash-card-hover-content {
+    display: none;
+}
+.actions-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+// ::ng-deep mat-icon, mat-icon:focus, ::ng-deep button:focus, ::ng-deep .mat-icon-button :focus, ::ng-deep .mat-button-wrapper:focus  {
+//     outline: none !important;
+// }
+// ::ng-deep .carousel > .mat-icon-button .mat-button-wrapper {
+//     border-radius: 18%;
+//     padding: 7px;
+//     background: white;
+// }

@@ -1,0 +1,11 @@
+{
+    "_MAIN": {
+        "translate": "Nous traduirons les informations les plus importantes pour votre navigation, vos achats et vos communications. Nos traductions sont fournies pour votre commodité. La version anglaise d'Amazon.com, y compris nos Conditions d'utilisation, est la version définitive. Apprendre encore plus"
+    },
+    "_HOME": {
+        "aboutMultiTenant": "À propos du multi-locataire",
+        "descMultiTenant": "La multilocation est une architecture dans laquelle une seule instance d'une application logicielle dessert plusieurs clients. Chaque client est appelé locataire. ... De cette manière, une application logicielle dans une architecture multi-tenant peut partager une instance dédiée de configurations, de données, de gestion des utilisateurs et d'autres propriétés.",
+        "dashboard": "Tableaux de bord",
+        "noDataFound": "Aucune donnée disponible"
+    }
+}

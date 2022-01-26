@@ -1,11 +1,12 @@
 
 <div class="main">
   <!-- <router-outlet></router-outlet> -->
-  <div *ngIf="app.isLoggedIn()">
+  <!-- <div *ngIf="appService.isLoggedIn()">
     <app-post-login-landing-page></app-post-login-landing-page>
   </div>
-  <div *ngIf="!app.isLoggedIn()">
+  <div *ngIf="!appService.isLoggedIn()">
     <app-landing-page></app-landing-page>
-  </div>
+  </div> -->
   <!-- <router-outlet></router-outlet> -->
+  <multi-tenant-sidebar-component></multi-tenant-sidebar-component>
 </div>

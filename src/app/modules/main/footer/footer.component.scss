@@ -1,0 +1,30 @@
+.footer {
+    background: #212121;
+    background: var(--a700);
+    padding: 8px 10px;
+    color: white;
+}
+.footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: var(--xs-font);
+    width: 100%;
+}
+.footer-blk-first {
+    display: flex;
+    justify-self: flex-start;
+    justify-content: space-between;
+    max-width: 330px;
+}
+.footer-blk-last {
+    display: flex;
+    margin-left: auto;
+    justify-self: flex-end;
+    justify-content: space-between;
+}
+.last-item {
+    margin-left: auto;
+    justify-self: flex-end;
+}

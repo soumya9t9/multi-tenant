@@ -1,0 +1,296 @@
+[
+    {
+        "tenantId": "odisha-esspl-2",
+        "loginForm": [
+            
+            {
+                "label": "Pan Number",
+                "controlType": "INPUT",
+                "controlName": "pan",
+                "value": null,
+                "maxLength": 10,
+                "placeholder": "PANCS8765E",
+                "type": "text",
+                "min": null,
+                "uppercase": true,
+                "validations": [
+                    {
+                        "name": "pan",
+                        "validator": "validatePanNumber",
+                        "validatorClass": "CustomValidatorService",
+                        "errorMsg": "Please provide valid pan number example VANPP7643E or CANCA98765Z"
+                    },
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide pan number"
+                    }
+                ],
+                "readonly": null
+            },
+            {
+                "label": "Aadhar Number",
+                "controlType": "INPUT",
+                "controlName": "aadhar",
+                "value": "98765432",
+                "maxLength": null,
+                "placeholder": "",
+                "type": "number",
+                "min": null,
+                "uppercase": false,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide aadhara number"
+                    }
+                ],
+                "readonly": null
+            },
+            {
+                "label": "Nick Name",
+                "controlType": "INPUT",
+                "controlName": "nickName",
+                "value": null,
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide nick name"
+                    }
+                ],
+                "readonly": null
+            },
+            {
+                "label": "address",
+                "controlType": "TEXT_AREA",
+                "controlName": "address",
+                "value": null,
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide address"
+                    }
+                ],
+                "readonly": null
+            },
+            {
+                "label": "gender",
+                "controlType": "RADIO",
+                "controlName": "gender",
+                "value": "MALE",
+                "maxLength": null,
+                "min": null,
+                "options": [
+                    {
+                        "value": "MALE",
+                        "label": "MALE"
+                    },
+                    {
+                        "value": "FEMALE",
+                        "label": "FEMALE"
+                    }
+                ],
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide gender"
+                    }
+                ],
+                "readonly": "readonly",
+                "type": null
+            }
+        ]
+    },
+    {
+        "tenantId": "bihar-esspl",
+        "loginForm": [
+            {
+                "label": "Nick Name",
+                "controlType": "INPUT",
+                "controlName": "name",
+                "value": null,
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide nick name"
+                    }
+                ],
+                "readonly": "readonly"
+            }
+        ]
+    },
+    {
+        "tenantId": "ap-esspl",
+        "loginForm": [
+            {
+                "label": "address",
+                "controlType": "TEXT_AREA",
+                "controlName": "address",
+                "value": null,
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide address"
+                    }
+                ],
+                "readonly": "readonly"
+            },
+            {
+                "label": "gender",
+                "controlType": "RADIO",
+                "controlName": "gender",
+                "value": "MALE",
+                "maxLength": null,
+                "min": null,
+                "options": [
+                    {
+                        "value": "MALE",
+                        "label": "MALE"
+                    },
+                    {
+                        "value": "FEMALE",
+                        "label": "FEMALE"
+                    }
+                ],
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide gender"
+                    }
+                ],
+                "readonly": "readonly",
+                "type": null
+            }
+        ]
+    },
+    {
+        "tenantId": "ts-esspl",
+        "loginForm": [
+            {
+                "label": "Nick Name",
+                "controlType": "INPUT",
+                "controlName": "name",
+                "value": null,
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide nick name"
+                    }
+                ],
+                "readonly": "readonly"
+            },
+            {
+                "label": "address",
+                "controlType": "TEXT_AREA",
+                "controlName": "address",
+                "value": null,
+                "maxLength": null,
+                "type": "text",
+                "min": null,
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide address"
+                    }
+                ],
+                "readonly": "readonly"
+            }
+        ]
+    },
+    {
+        "tenantId": "bengal-esspl",
+        "loginForm": [
+            {
+                "label": "gender",
+                "controlType": "RADIO",
+                "controlName": "gender",
+                "value": "MALE",
+                "maxLength": null,
+                "min": null,
+                "readonly": "readonly",
+                "type": null,
+                "options": [
+                    {
+                        "value": "MALE",
+                        "label": "MALE"
+                    },
+                    {
+                        "value": "FEMALE",
+                        "label": "FEMALE"
+                    }
+                ],
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide gender",
+                        "params": null,
+                        "isCallbackValidator": false
+                    }
+                ]
+            },
+            {
+                "label": "role",
+                "controlType": "SELECT",
+                "controlName": "role",
+                "value": null,
+                "readonly": "readonly",
+                "type": null,
+                "options": [
+                    {
+                        "value": "Admin",
+                        "label": "Admin"
+                    },
+                    {
+                        "value": "Operator",
+                        "label": "Operator"
+                    }
+                ],
+                "validations": [
+                    {
+                        "name": "required",
+                        "validator": "required",
+                        "validatorClass": "Validators",
+                        "errorMsg": "Please provide role",
+                        "params": null,
+                        "isCallbackValidator": false
+                    }
+                ]
+            }
+        ]
+    }
+]

@@ -1,0 +1,97 @@
+mat-card {
+    margin: 20px;
+}
+.mat-form-field-infix {
+    width: 100% !important;
+}
+button {
+    border: none;
+}
+.mat-form-field {
+    width: 80% !important;
+}
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.form-wrapper {
+    display: flex;
+    flex-wrap: wrap
+}
+.primary-btn {
+    background: var(--color-primary);
+}
+.accent-btn {
+    background: var(--color-accent);
+}
+.demo-btn-list {
+    display: inline-flex;
+    vertical-align: middle;
+    padding-bottom: 19px;
+    flex-wrap: wrap;
+}
+.demo-btn-wrapper {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+.demo-btn {
+    height: 50px;
+    border-radius: 4px;
+    width: 50px;
+    margin: 0 auto;
+}
+.flex-end {
+    justify-content: flex-end;
+    display: flex;
+}
+.flex-md-end {
+    @media (min-width: 768px) {
+        justify-content: flex-end !important;
+    }
+}
+.flex-start {
+    justify-content: flex-start;
+    display: flex;
+}
+.flex-sm-start {
+    @media (max-width: 767px) {
+        justify-content: flex-start !important;
+    }
+    // display: flex;
+}
+.color-code {
+    padding: 0 5px;
+    font-weight: 600;
+}
+.palete-color {
+    border: 1px solid black;
+    padding: 2px 5px;
+    margin: 1px 3px;
+}
+.palette-wrapper {
+    flex-direction: column;
+}
+.close-own-theme {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+.add-btns{
+    border: 1px solid;
+    padding: 2px 4px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--p900);
+    border-radius: 4px;
+}
+.theme-info-icon {
+    position: absolute;
+}
+.theme-heading-wrapper {
+    @media screen and (max-width: 575px) {
+        flex-direction: column;
+    }
+}
