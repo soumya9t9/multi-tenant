@@ -1,0 +1,59 @@
+<mat-sidenav-container [hasBackdrop]="true" (backdropClick)="sidenav.close()">
+  <i class="material-icons menu" (toggleSidenav)="sidenav.open()">menu</i>
+
+  <mat-sidenav #sidenav mode="side" disableClose class="sidemenu" position="end">
+    <mat-nav-list>
+      <mat-toolbar-row class="menu-header">
+        <h2 matSubheader class="side-head p-0"> Menu </h2>
+      </mat-toolbar-row>
+      <div class="side-list mb-2">
+        <button mat-raised-button class="btn-resize resize-left" (click)="changeFontSize(-1)" [disabled]="fontCounter<1" [ngClass]="{'cursor-pointer': fontCounter<1}">-A</button>
+        <button mat-raised-button class="btn-resize resize-mid" (click)="changeFontSize(0)" [disabled]="fontCounter==0" [ngClass]="{'cursor-pointer': fontCounter==0}">A</button>
+        <button mat-raised-button class="btn-resize resize-right" (click)="changeFontSize(1)" [disabled]="fontCounter>5" [ngClass]="{'cursor-pointer': fontCounter>5}">A+</button>
+
+        <!-- dark mode - light mode switch/toggler -->
+        <div class="float-right d-f-align-item-center cursor-pointer" (click)="toggleThemeMode()" style="margin-top:6px;">
+          <mat-icon class=" night-icon" *ngIf="toggleControl === 'light'">nights_stay</mat-icon>
+          <!-- wb_cloudy -->
+          <mat-icon class=" day-icon" *ngIf="toggleControl === 'dark'">wb_sunny</mat-icon>
+        </div>
+      </div>
+      <div class="side-list" mat-list-item *ngFor="let item of menuLists" (click)="sidenav.close();">
+        <ng-container *ngIf="(item.condition&&item.condition())">
+          <div *ngIf="!item.onClick" [ngClass]="item.route != '#' ?'for-hover':''" routerLinkActive="list-item-active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="[item.route]">{{item.title}}</div>
+          
+          <div class="for-hover aa" *ngIf="item.onClick" (click)="item.onClick()">
+            {{item.title}}
+          </div>
+          <ul *ngIf="item.children">
+            <ng-container *ngFor="let child of item.children">
+              <ng-container *ngIf="(child.condition && child.condition())">
+                <li class="for-hover aa" *ngIf="child.onClick" (click)="child.onClick()">
+                  {{child.title}}
+                </li>
+                <li class="for-hover" *ngIf="!child.onClick" [routerLink]="[child.route]" routerLinkActive="list-item-active" [routerLinkActiveOptions]="{exact: true}">
+                  {{child.title}}
+                </li>
+              </ng-container>
+            </ng-container>
+          </ul>
+          <mat-divider></mat-divider>
+        </ng-container>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-header (toggleSidenav)="sidenav.open();consoleLog()" id="app-header"></app-header>
+    <div class="main-outlet-wrapper">
+      <div id="main-router-outlet" class="position-relative main-router-outlet">
+        <mat-card>
+          {{'_MAIN.translate' | translate}}
+        </mat-card>
+        <router-outlet></router-outlet>
+      </div>
+        <app-footer id="app-footer" class="app-footer"></app-footer>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

@@ -21,7 +21,7 @@ export class NotAuthGuard implements CanActivate, CanActivateChild {
       route: ActivatedRouteSnapshot,
       state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         const isLoggedIn = this.app.isLoggedIn();
-        if(isLoggedIn) this.router.navigate([this.app.tenantId, 'dashboard']);
+        if(isLoggedIn) this.router.navigate(['dashboard']);
         return !isLoggedIn;
     }
   

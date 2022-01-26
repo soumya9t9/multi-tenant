@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import "themes/custom.theme";
+@import "themes/default.theme";
+@import "assets/styles/common.style";
+@import "assets/styles/variables";
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+// @import "~material-icons/iconfont/material-icons.css";
+
+body{
+    overflow: hidden !important;
+    font-size: var(--normal-font, 16px) !important;
+  }
+  .cursor-pointer{
+    cursor: pointer;
+  }
+  .mat-flat-button.mat-accent {
+    background-color: #2b2a2b;
+    opacity: 20;
+  }
+  .mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: var(--p900) !important;
+  }
+  .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: var(--p900) !important;
+  }
+  .mat-raised-button.mat-primary {
+    background-color: #2b2a2b;
+  }
+  
+  .setting-btn {
+    float: right;
+  }
+  .mat-menu-content:not(:empty) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  i.material-icons.plus {
+    font-size: 17px;
+    margin-top: -3px;
+  }

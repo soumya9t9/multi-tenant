@@ -22,7 +22,7 @@ export class TenantService {
     if (this.router.url.includes(environment.appUrl)) {
       return this.urlService.getDomainName();
     } else {
-      return '';
+      return this.urlService.getDomainName();
     }
   }
 
@@ -38,7 +38,7 @@ export class TenantService {
   }
 
   getTenantIdFromRoute(): string {
-    return this.route.snapshot.params.tenantID;
+    return this.route.snapshot.params['tenantID'];
   }
 
   addTenantToHeaders(headers: HttpHeaders): HttpHeaders {

@@ -1,0 +1,87 @@
+<form [formGroup]="baseFG" class="row" (submit)="submit(null)">
+
+    <div class="fc-wrapper col-md-6" [ngClass]="{'col-md-12': field.controlType === 'BUTTON'}" *ngFor="let field of formConfig;let fIndex=index">
+        <label [attr.for]="field.controlName" *ngIf="field.controlName">{{field.label}}</label>
+        <ng-container [ngSwitch]="field.controlType">
+            <section *ngSwitchCase="'INPUT'">
+                <!-- TEXTBOX START -->
+                <mat-form-field autocomplete="off" class="disabled-chips">
+                    <input [attr.autocomplete]="'off'" matInput maxlength="{{field.maxLength}}"
+                        min="0" name="{{field.controlName}}" [formControlName]="field.controlName"
+                        trimOnBlur [min]="field.min" [attr.type]="field.type || 'text'"
+                        (change)="onInputChange($event, field)"[(ngModel)]="field.value">
+                    <mat-error class="padding-bottom">
+                        {{getErrorMessage(field)}}
+                        <!-- please provide valid {{field.label}} -->
+                    </mat-error>
+                </mat-form-field>
+            </section>
+
+            <!-- RADIO BUTTON START -->
+            <section class="adding-mintop margin-bottom margin-mintop" *ngSwitchCase="'RADIO'">
+                <mat-radio-group formControlName="{{field.controlName}}" [(ngModel)]="field.value">
+                    <mat-radio-button *ngFor="let opt of field.options" [checked]="opt.value == field.value"
+                        [value]="opt.value" (change)="radioChange(opt.value,field)" class="pr-2">{{opt.label}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </section>
+
+            <section *ngSwitchCase="'TEXT_AREA'">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <textarea formControlName="{{field.controlName}}" matInput placeholder="" [attr.readonly]="field.readonly"
+                    [(ngModel)]="field.value"></textarea>
+                    <mat-error class="padding-bottom">
+                        {{getErrorMessage(field)}}
+                      <!-- please provide valid {{field.label}} -->
+                  </mat-error>
+                  </mat-form-field>
+            </section>
+
+            <section *ngSwitchCase="'SELECT'">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-select [(ngModel)]="field.value" formControlName="{{field.controlName}}"  [disabled]="field.disabled">
+                        <mat-option [value]="eachOption.value || eachOption" *ngFor="let eachOption of field.options">{{eachOption.label || eachOption}}</mat-option>
+                      </mat-select>
+                  </mat-form-field>
+            </section>
+
+            <section *ngSwitchCase="'MULTI_SELECT'">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-select [(ngModel)]="field.value" formControlName="{{field.controlName}}" [disabled]="field.disabled" multiple>
+                        <mat-option [value]="eachOption.value || eachOption" *ngFor="let eachOption of field.options">{{eachOption.label || eachOption}}</mat-option>
+                      </mat-select>
+
+                      <mat-error class="padding-bottom">
+                        please provide valid {{field.label}}
+                    </mat-error>
+                  </mat-form-field>
+            </section>
+
+            <section *ngSwitchCase="'BUTTON'" class="d-flex justify-content-center mt-3 mb-5">
+                <button mat-raised-button [attr.type]="field.type" [disabled]="field.disabled">{{field.label}}</button>
+            </section>
+
+            <section *ngSwitchCase="'FORMGROUP'" [formGroupName]="field.controlName">
+                <esspl-dyn-form [form]="baseFG.get(field.controlName)" [formConfig]="[field]"></esspl-dyn-form>
+            </section>
+            
+            <section *ngSwitchCase="'FORMARRAY'" [formArrayName]="field.controlName" class="col-md-12">
+                <div class="" *ngIf="field.formInputs[0].controlType !== 'FORMGROUP'" >
+                    <div class="recursion-wrapper" *ngFor="let eachFAControl of field.formInputs;let faIndex=index">
+                        <esspl-dyn-form class="col-10"[form]="baseFG.get(field.controlName)" [formConfig]="[eachFAControl]"></esspl-dyn-form>
+                        <button class="col-auto h-35" mat-raised-button type="button" (click)="removeToFArray(field, baseFG.get(field.controlName), faIndex)">Remove</button>
+                    </div>
+                </div>
+                
+                <div  *ngIf="field.formInputs[0].controlType === 'FORMGROUP'" >
+                    <div class="recursion-wrapper" *ngFor="let eachFAControl of field.formInputs;let faIndex=index">
+                        <esspl-dyn-form class="col-10" [form]="baseFG.get(field.controlName).controls[faIndex]" [formConfig]="eachFAControl.formInputs"></esspl-dyn-form>
+                        <button class="col-auto h-35" mat-raised-button type="button" (click)="removeToFArray(field, baseFG.get(field.controlName), faIndex)">Remove</button>
+                    </div>
+                </div>
+                <button mat-raised-button type="button" (click)="addToFArray(field, baseFG.get(field.controlName))">Add</button>
+            </section>
+
+        </ng-container>
+    </div>
+</form>

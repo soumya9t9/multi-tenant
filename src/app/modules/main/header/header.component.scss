@@ -15,6 +15,57 @@
   h5,
   h6 {
     margin: 8px 0;
+  }.esspl-navigation-bar{
+    // background-color: #bd6670;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    box-shadow: inset 0px 0 4px 0px rgba(0, 0, 0, 0.3);
+  }
+  .header-logo {
+    height: 50px;
+  }
+  .mat-toolbar-row, .mat-toolbar-single-row{
+    padding: 0px !important;
+  }
+  .header-info{
+    display: inline-flex;
+    color: #fafafa;
+    min-height: 60px;
+    padding: 0px;
+    align-items: center;
+  }
+  .toolbar-title {
+    margin-top: 4px;
+    font-size: var(--toolbar-heading-font);
+    font-weight: 600;
+    padding-left: 15px;
+  }
+  .header-menu{
+    display: inline-flex !important;
+  }
+  .list-item-active{
+    background: #000 !important;
+  }
+  .logout{
+    padding: 10px 0;
+    height: 45px;
+    cursor: pointer;
+  }
+  .menu-icon{
+    width: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-left: 7px;
+  }
+  .icon-bg {
+    font-size: 13px;
+    padding: 2px 1px 0 3px;
+  }
+  a:active, a:hover {
+    color: white !important;
   }
 
   p {

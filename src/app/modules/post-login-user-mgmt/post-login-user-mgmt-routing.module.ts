@@ -6,6 +6,10 @@ const routes: Routes = [
   {
     path: 'change-password',
     component: ChangePswdComponent
+  },
+  {
+    path: '',
+    component: ChangePswdComponent
   }
 ];
 

@@ -1,0 +1,14 @@
+{
+    "id": 11,
+    "theme": "default-theme",
+    "label": null,
+    "isActive": true,
+    "primary": null,
+    "accent": null,
+    "warn": null,
+    "toolBarBG": "#000000",
+    "toolBarText": "#FFFFFF",
+    "defaultThemeMode": "light",
+    "onHover": null,
+    "onSelect": null
+}

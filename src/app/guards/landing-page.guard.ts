@@ -15,7 +15,7 @@ export class LandingPageGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if(this.app.isLoggedIn()) {
-        this.router.navigate([`${this.app.tenantId}`, 'dashboard']);
+        this.router.navigate([`dashboard`]);
         return false;
       }
       this.router.navigate(['login'])

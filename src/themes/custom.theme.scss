@@ -1,0 +1,240 @@
+/**
+* Created at 1397/12/14 (2019/3/5).
+* @author {@link https://mirismaili.github.io S. Mahdi Mir-Ismaili}
+*/
+
+@import '~@angular/material/theming';
+
+@import "./default.palette";
+@import "./dynamic.palette";
+
+@include mat-core();
+
+@mixin define-css-classes($theme, $is-dark:false) {
+	@include angular-material-theme($theme);
+
+	$primary: map-get($theme, primary);
+	$accent: map-get($theme, accent);
+	$warn: map-get($theme, warn);
+	$background: map-get($theme, background);
+	$foreground: map-get($theme, foreground);
+
+	$color-primary: mat-color($primary);
+	$color-accent: mat-color($accent);
+	$color-warn: mat-color($warn);
+
+	
+	/* primary color */
+	$p50: mat-color($primary, 50);
+	$p100: mat-color($primary, 100);
+	$p300: mat-color($primary, 300);
+	$p400: mat-color($primary, 400);
+	$p600: mat-color($primary, 600);
+	$p700: mat-color($primary, 700);
+	$p800: mat-color($primary, 800);
+	$p900: mat-color($primary, 900);
+	$pa100: mat-color($primary, A100);
+	$pa200: mat-color($primary, A200);
+	$pa400: mat-color($primary, A400);
+	$pa700: mat-color($primary, A700);
+
+	/* accent */
+	$a50: mat-color($accent, 50);
+	$a100: mat-color($accent, 100);
+	$a300: mat-color($accent, 300);
+	$a400: mat-color($accent, 400);
+	$a600: mat-color($accent, 600);
+	$a700: mat-color($accent, 700);
+	$a800: mat-color($accent, 800);
+	$a900: mat-color($accent, 900);
+	$aa100: mat-color($accent, A100);
+	$aa200: mat-color($accent, A200);
+	$aa400: mat-color($accent, A400);
+	$aa700: mat-color($accent, A700);
+
+
+	/* foreground colors */
+	$text-base: mat-color($foreground, base);
+	$text-primary: mat-color($foreground, text);
+	$text-secondary: mat-color($foreground, secondary-text);
+	$text-divider: mat-color($foreground, divider);
+	$text-hint: mat-color($foreground, hint-text);
+	$text-disabled: mat-color($foreground, disabled);
+	$btn-disabled: mat-color($foreground, disabled-button);
+	$text-icons: mat-color($foreground, icon);
+	$slider-min: mat-color($foreground, slider-min);
+	$slider-off: mat-color($foreground, slider-off);
+	$slider-off-active: mat-color($foreground, slider-off-active);
+		/* extra colors */
+	$text-tertiary: mat-color($foreground);
+	$text-quaternary: mat-color($foreground);
+	
+
+	/* background colors */
+	$bg-status-bar: mat-color($background, status-bar);
+	$bg-app-bar: mat-color($background, app-bar);
+	$bg: mat-color($background, background);
+	$bg-hover: #525252 ;//mat-color($background, hover);
+	$bg-card: mat-color($background, bg-card);
+	$bg-dialog: mat-color($background, bg-dialog);
+	$bg-disabled: mat-color($background, disabled-button);
+	$bg-raised-button: mat-color($background, raised-button);
+	$bg-focused-button: mat-color($background, focused-button);
+	$bg-selected-button: mat-color($background, selected-button);
+	$bg-selected-disabled-button: mat-color($background, selected-disabled-button);
+	$bg-unselected-chip: mat-color($background, unselected-chip);
+	$bg-disabled-list-option: mat-color($background, disabled-list-option);
+	// status-bar: map_get($mat-grey, 300),
+	// app-bar:    map_get($mat-grey, 100),
+	// background: map_get($mat-grey, 50),
+	// hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+	// card:       white,
+	// dialog:     white,
+	// disabled-button: rgba(black, 0.12),
+	// raised-button: white,
+	// focused-button: $dark-focused,
+	// selected-button: map_get($mat-grey, 300),
+	// selected-disabled-button: map_get($mat-grey, 400),
+	// disabled-button-toggle: map_get($mat-grey, 200),
+	// unselected-chip: map_get($mat-grey, 300),
+	// disabled-list-option: map_get($mat-grey, 200),
+	
+	// :root {
+	--color-primary: #{$color-primary};
+	--color-accent: #{$color-accent};
+	--color-warn: #{$color-warn};
+
+	--text-primary: #{$text-primary};
+	--text-secondary: #{$text-secondary};
+	--text-tertiary: #{$text-tertiary};
+	--text-quaternary: #{$text-quaternary};
+
+	/* foreground */
+	--text-base: #{$text-base};
+	--text-primary: #{$text-primary};
+	--text-secondary: #{$text-secondary};
+	--text-divider: #{$text-divider};
+	--text-hint: #{$text-hint};
+	--text-disabled: #{$text-disabled};
+	--btn-disabled: #{$btn-disabled};
+	--text-icons: #{$text-icons};
+	--slider-min: #{$slider-min};
+	--slider-off: #{$slider-off};
+	--slider-off-active: #{slider-off-active};
+
+	/* background */
+	--bg-status-bar : #{$bg-status-bar};
+	--bg-app-bar : #{$color-primary};
+	--bg-nav-bar : #{$color-primary};
+	--bg: #{$bg};
+	--bg-hover: #{$bg-hover};	
+	--bg-card : #{$bg-card};
+	--bg-dialog : #{$bg-dialog};
+	--bg-disabled : #{$bg-disabled};
+	--bg-raised-button : #{$bg-raised-button};
+	--bg-focused-button : #{$bg-focused-button};
+	--bg-selected-button : #{$bg-selected-button};
+	--bg-selected-disabled-button : #{$bg-selected-disabled-button};
+	--bg-unselected-chip : #{$bg-unselected-chip};
+	--bg-disabled-list-option : #{$bg-disabled-list-option};
+	--bg-selected: #{$p900};
+
+	/* primary color */
+	--p50: #{$p50};
+	--p100: #{$p100};
+	--p300: #{$p300};
+	--p400: #{$p400};
+	--p600: #{$p600};
+	--p700: #{$p700};
+	--p800: #{$p800};
+	--p900: #{$p900};
+	--pa100: #{$pa100};
+	--pa200: #{$pa200};
+	--pa400: #{$pa400};
+	--pa700: #{$pa700};
+
+	/* accent */
+	--a50: #{$a50};
+	--a100: #{$a100};
+	--a300: #{$a300};
+	--a400: #{$a400};
+	--a600: #{$a600};
+	--a700: #{$a700};
+	--a800: #{$a800};
+	--a900: #{$a900};
+	--aa100: #{$aa100};
+	--aa200: #{$aa200};
+	--aa400: #{$aa400};
+	--aa700: #{$aa700};
+
+	// }
+	
+
+
+	
+  // CSS THEME-DEPENDENT-STYLES ARE HERE:
+  .theme-dependent-colors {
+      background: mat-color($primary);
+      color: mat-color($accent);
+  }
+
+  .app-tool-bar {
+	background: var(--bg-app-bar);
+	color: var(--text-app-bar, white);
+  }
+  
+  .mat-card-intermediate {
+	@if $is-dark {
+    	background: #828282 !important;
+		background-color: #828282 !important;
+	} @else {
+		background: #e8e8e8 !important;
+		background-color: #e8e8e8 !important;
+	}
+  }
+}
+
+/**
+* Define your custom themes in this map. 
+* The `key` of each member is the name of CSS class for that theme. 
+* To better understanding the schema of the map, see `@each` loop below and especially pay attention to 
+* `map-has-key()` functions.
+*/
+$app-themes: (
+		indigo-pink : (primary-base: $mat-indigo, accent-base: $mat-pink),
+		deeppurple-amber: (primary-base: $mat-deep-purple, accent-base: $mat-amber),
+		pink-bluegrey : (primary-base: $mat-pink, accent-base: $mat-blue-gray),
+		purple-green : (primary-base: $mat-purple, accent-base: $mat-green),
+		// default-theme : (primary-base: $default-palette-primary, accent-base: $default-palette-accent),
+		dynamic-theme : (primary-base: $dynamic-theme-primary, accent-base: $dynamic-theme-accent, warn-base:$dynamic-theme-ternary),
+);
+
+@each $css-class, $theme in $app-themes {
+	$primary: if(map-has-key($theme, primary), map-get($theme, primary), mat-palette(map-get($theme, primary-base)));
+
+	$accent: if(map-has-key($theme, accent), map-get($theme, accent), mat-palette(map-get($theme, accent-base)));
+
+	$warn: if(map-has-key($theme, warn), map-get($theme, warn), mat-palette(
+			if(map-has-key($theme, warn-base), map-get($theme, warn-base), $mat-red)
+	));
+
+	.#{$css-class} {
+		@include define-css-classes(mat-light-theme($primary, $accent, $warn));
+	}
+
+	.#{$css-class}-dark {
+		@include define-css-classes(mat-dark-theme($primary, $accent, $warn), true);
+	}
+
+	.theme-primary.#{$css-class} {
+		background-color: mat-color($primary);
+	}
+
+	.theme-accent.#{$css-class} {
+		background-color: mat-color($accent);
+	}
+
+	.theme-warn.#{$css-class} {
+		background-color: mat-color($warn);
+	}
+}

@@ -20,10 +20,10 @@ export class AuthGuard implements CanActivate, CanActivateChild {
           // this.router.navigateByUrl('/');
         }
         else if(this.app.tenantId === route.params.tenantId && urlArray.filter(e => e).length == 1) {
-          this.router.navigate([this.app.tenantId, 'dashboard']);
+          this.router.navigate(['dashboard']);
         }
         else if(isLoggedIn && this.app.tenantId && this.app.tenantId !== route.params.tenantId) {
-          this.updateUrl(route, state);
+          // this.updateUrl(route, state);
         }
         return isLoggedIn;
     }
@@ -33,7 +33,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
       state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         const isLoggedIn = this.app.isLoggedIn();
         if(isLoggedIn && this.app.tenantId && this.app.tenantId !== route.params.tenantId) {
-          this.updateUrl(route, state);
+          // this.updateUrl(route, state);
         }
         return this.app.isLoggedIn();
     }
