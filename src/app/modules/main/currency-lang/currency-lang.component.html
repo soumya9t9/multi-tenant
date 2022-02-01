@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+
+    <mat-form-field class="col-md-4">
+        <label class="capitalize">
+            {{ '_MAIN.selectLang' | translate }}
+        </label>
+            <mat-select #langSelect  [(ngModel)]="selectedL" (selectionChange)="changeLanguage(langSelect.value)">
+              <mat-option *ngFor="let lang of langList" [value]="lang.id"
+              >{{ lang.label }}</mat-option>
+              <!-- [selected]="lang.code === translateService.currentLang" -->
+            </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="col-md-4">
+        <label>
+            {{ '_MAIN.selectCurrency' | translate }}
+        </label>
+            <mat-select #currencySelect [(ngModel)]="langService.selectedCurrency" (selectionChange)="changeCurrency(currencySelect.value)">
+              <mat-option *ngFor="let curr of currencies" [value]="curr.code"
+              >{{ curr.label }}</mat-option>
+              <!-- [selected]="curr.code === langService.getCurrency()" -->
+            </mat-select>
+    </mat-form-field>
+</div>
+
+    <div>
+        We are charging {{money | currencyProxy }}
+    </div>
+</div>

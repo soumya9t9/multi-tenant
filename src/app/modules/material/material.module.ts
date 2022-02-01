@@ -29,6 +29,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatOptionModule } from '@angular/material/core';
 
 let IMPORT_EXPORT = [
   MatFormFieldModule,
@@ -58,6 +59,7 @@ let IMPORT_EXPORT = [
   MatDialogModule,
   MatProgressSpinnerModule,
   MatSlideToggleModule,
+  MatOptionModule
 
 ]
 @NgModule({

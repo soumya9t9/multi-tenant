@@ -55,20 +55,18 @@
 
       <div class=" col-md-9 d-flex justify-content-end align-items-center">
 
-        <!-- <div > -->
-        <!-- <a class="router-link" *ngIf="!activeLoginURL" routerLink="/login">Login</a>
-                 </div> -->
+        <div>
+          <label>
+          </label>
+              <select #langSelect (change)="changeLang(langSelect.value)">
+                <option *ngFor="let lang of langs" [value]="lang.code"
+                  [selected]="lang.code === translate.currentLang">{{ lang.label }}</option>
+              </select>
+      </div>
 
-        <label>
-          <!-- {{ '_MAIN.SELECT' | translate }} -->
-          <select #langSelect (change)="changeLang(langSelect.value)">
-            <option *ngFor="let lang of langs" [value]="lang.code"
-              [selected]="lang.code === translate.currentLang">{{ lang.label }}</option>
-          </select>
-        </label>
-
+      
         <button mat-icon-button type="button" class="menu-icon" (click)="lol()">
-          <mat-icon>menu</mat-icon>
+          <mat-icon i18n="@@menu">menu</mat-icon>
         </button>
         <!-- <button class="power_settings_new" mat-icon-button (click)="logout()">
           <mat-icon>logoff</mat-icon>

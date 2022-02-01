@@ -1,5 +1,6 @@
-import { DOCUMENT, Location } from '@angular/common';
-import { EventEmitter, Inject } from '@angular/core';
+import { DOCUMENT, FormatWidth, getLocaleCurrencyCode, getLocaleDateFormat, Location } from '@angular/common';
+import { localizedString } from '@angular/compiler/src/output/output_ast';
+import { EventEmitter, Inject, LOCALE_ID } from '@angular/core';
 import { Component, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
@@ -48,13 +49,15 @@ export class HeaderComponent implements OnInit {
     public translate: TranslateService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private location: Location,
+    @Inject(LOCALE_ID) public locale,
     @Inject(DOCUMENT) private document: Document
     // @Inject(REQUEST) private request: Request,
   ) { }
 
   ngOnInit(): void {
     this.isLoggedIn = this.app.isLoggedIn();
+    console.log(getLocaleCurrencyCode(this.locale));
+    console.log(getLocaleDateFormat(this.locale, FormatWidth.Short));
   }
 
   logout() {

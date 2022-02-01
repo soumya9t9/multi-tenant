@@ -16,10 +16,18 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "esspl",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "fr": "src/locale/messages.fr.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": false,
+            "i18nMissingTranslation": "error",
             "outputPath": "dist/multi-tenant",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -66,6 +74,12 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "fr" : {
+              "localize": ["fr"]
+            },
+            "hi": {
+              "localize": ["hi"]
             }
           },
           "defaultConfiguration": "production"
@@ -78,6 +92,9 @@
             },
             "development": {
               "browserTarget": "multi-tenant:build:development"
+            },
+            "fr": {
+              "browserTarget": "multi-tenant:build:fr"
             }
           },
           "defaultConfiguration": "development"

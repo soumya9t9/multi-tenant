@@ -1,5 +1,7 @@
 {
     "_MAIN": {
+        "selectLang": "select language",
+        "selectCurrency": "select currency",
         "translate": "Nous traduirons les informations les plus importantes pour votre navigation, vos achats et vos communications. Nos traductions sont fournies pour votre commodité. La version anglaise d'Amazon.com, y compris nos Conditions d'utilisation, est la version définitive. Apprendre encore plus"
     },
     "_HOME": {

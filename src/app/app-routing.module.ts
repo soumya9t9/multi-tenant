@@ -5,6 +5,7 @@ import { LandingPageGuard } from './guards/landing-page.guard';
 import { NotAuthGuard } from './guards/not-auth.guard';
 import { DashboardViewComponent } from './modules/dashboard/dashboard-view/dashboard-view.component';
 import { CreateFormComponent } from './modules/home/create-form/create-form.component';
+import { CurrencyLangComponent } from './modules/main/currency-lang/currency-lang.component';
 import { EmptyComponent } from './modules/main/empty/empty.component';
 import { LandingPageComponent } from './modules/main/landing-page/landing-page.component';
 import { PostLoginLandingPageComponent } from './modules/main/post-login-landing-page/post-login-landing-page.component';
@@ -76,6 +77,11 @@ const routes: Routes = [
     pathMatch: "full",
     canActivate: [NotAuthGuard],
     component: CreateFormComponent
+  },
+  {
+    path: "settings",
+    pathMatch: "full",
+    component: CurrencyLangComponent
   },
   {
     path: "",

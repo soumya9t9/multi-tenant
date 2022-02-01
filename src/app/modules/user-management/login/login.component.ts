@@ -83,13 +83,11 @@ export class LoginComponent implements OnInit {
 
     this.http.get('assets/data/tenant.json').subscribe(res => {
       this.tenantData = res as any;
-      this.extraForm = this.tenantData.find(e => e.tenantId === ('odisha-esspl-2'||this.app.tenantId));
+      this.extraForm = this.tenantData.find(e => e.tenantId === ("ts-esspl" ||this.app.tenantId));
       if(!this.extraForm) this.extraForm = this.tenantData[this.tenantData.length - 1]; 
       this.formConfig = this.extraForm?.loginForm;
       console.log(this.extraForm);
     })
-
-
   }
 
   ngOnInit(): void {
@@ -106,7 +104,7 @@ export class LoginComponent implements OnInit {
     const fValue = this.loginForm.value;
     const user =  this.credentials.find(e => { return e.password === fValue.password && e.userName === fValue.userName });
     if (user && this.loginForm.valid && this.dynForm?.baseFG?.valid) {
-      console.log("hurr re")
+      console.log("hurr re", fValue)
       this.app.login({ id: user.userName, ...user });
     }
   }

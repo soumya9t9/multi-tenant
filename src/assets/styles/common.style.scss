@@ -109,3 +109,6 @@ button, .mat-button, .mat-raised-button, .mat-icon-button, .mat-stroked-button, 
     border-top-left-radius: $card-border-radius !important;
     border-top-right-radius: $card-border-radius !important;
 }
+.capitalize { 
+    text-transform: capitalize;
+}

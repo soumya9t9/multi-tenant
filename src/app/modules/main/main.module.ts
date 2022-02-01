@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { DEFAULT_CURRENCY_CODE, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PostLoginLandingPageComponent } from './post-login-landing-page/post-login-landing-page.component';
 import { RouterModule } from '@angular/router';
@@ -13,6 +13,18 @@ import { MaterialsModule } from '../material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslateUIModule } from '../translate-ui/translate-ui.module';
+import { CurrencyLangComponent } from './currency-lang/currency-lang.component';
+import { CustomDateModule } from 'src/app/shared/custom-date/custom-date.module';
+import { CurrencyProxyPipe } from 'src/app/currency-proxy.pipe';
+import { LangSettingsService } from 'src/app/lang-settings.service';
+import { TranslateService } from '@ngx-translate/core';
+import { DateFnsConfigurationService, DateFnsModule } from 'ngx-date-fns';
+import { enIN } from 'date-fns/locale';
+import { CustomDatePipe } from 'src/app/custom-date.pipe';
+
+
+const frenchConfig = new DateFnsConfigurationService();
+frenchConfig.setLocale(enIN);
 
 const COMPONENTS = [
   PostLoginLandingPageComponent,
@@ -22,12 +34,15 @@ const COMPONENTS = [
   EmptyComponent,
   SidebarComponentComponent,
   FooterComponent,
-  SettingsComponent
+  SettingsComponent,
+  CurrencyLangComponent,
+  CustomDatePipe
 ];
 
 @NgModule({
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    CurrencyProxyPipe
   ],
   imports: [
     CommonModule,
@@ -36,8 +51,23 @@ const COMPONENTS = [
     ReactiveFormsModule,
     MaterialsModule,
     MatIconModule,
-    TranslateUIModule
-
+    TranslateUIModule,
+    CustomDateModule,
+    DateFnsModule
+  ],
+  providers: [
+    { provide: DEFAULT_CURRENCY_CODE,
+      deps: [LangSettingsService, TranslateService],      //some service handling global settings
+      // useFactory: (langSettingsService:LangSettingsService) => langSettingsService.getCurrencyObj()?.code || "INR"   //returns locale string
+      useValue: 'INR' 
+    },
+    { provide: "CURRENCY_ID",
+      deps: [LangSettingsService, TranslateService],      //some service handling global settings
+      useFactory: (langSettingsService:LangSettingsService) => langSettingsService.selectedCurrency || "INR"   //returns locale string
+      // useValue: 'INR' 
+    },
+    { provide: DateFnsConfigurationService, useValue: frenchConfig }
+    
   ],
   exports: [ COMPONENTS]
 })

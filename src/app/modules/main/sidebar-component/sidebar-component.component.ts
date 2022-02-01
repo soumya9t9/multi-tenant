@@ -1,5 +1,6 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Inject, DEFAULT_CURRENCY_CODE } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { AppService } from 'src/app/app.service';
 import { DynamicThemeService } from 'src/app/services/dynamic-theme.service';
 
@@ -48,6 +49,12 @@ export class SidebarComponentComponent implements OnInit, AfterViewInit {
       title: 'Theme Selection',
       condition: ()=> {return true }
     },
+    {
+      icon: '',
+      route: 'settings',
+      title: 'Settings',
+      condition: ()=> {return true }
+    },
     // {
     //   icon: '',
     //   route: '',
@@ -68,20 +75,23 @@ export class SidebarComponentComponent implements OnInit, AfterViewInit {
    
   ];;
   fontCounter=0;
-
+  price = 858.65;
+  dateNow = new Date();
   toggleControl = this.themeService.currentThemeMode;
  
   constructor(
     router: Router,
     private app: AppService,
     private themeService: DynamicThemeService,
+    public translateService:TranslateService,
+    @Inject('CURRENCY_ID') public cCode
   ) {
     this.router = router;
     this.themeController();
+    this.translateService.currentLang
   }
 
-  ngOnInit() {
-    
+  ngOnInit() {    
   }
   fileDownload(){
   

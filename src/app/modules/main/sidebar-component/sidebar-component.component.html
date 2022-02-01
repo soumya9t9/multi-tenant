@@ -50,6 +50,15 @@
         <mat-card>
           {{'_MAIN.translate' | translate}}
         </mat-card>
+
+        <mat-card>
+          {{ price | currencyProxy }}
+          {{dateNow | dfnsFormatDistanceToNow}}
+          {{dateNow | dfnsFormat: "dd/MM/yyyy"}}
+          {{dateNow | customDate}}
+          <!-- {{dateNow |   }} -->
+          <!-- {{ dateNow | date : "dd/MM/yyy" : :translateService.currentLang }} -->
+        </mat-card>
         <router-outlet></router-outlet>
       </div>
         <app-footer id="app-footer" class="app-footer"></app-footer>
