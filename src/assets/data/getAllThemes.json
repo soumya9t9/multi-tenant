@@ -10,7 +10,7 @@
             "warn": "#FFFF00",
             "toolBarBG": "#E6E6E6",
             "toolBarText": "#FFFFFF",
-            "defaultThemeMode": "dark",
+            "defaultThemeMode": "light",
             "onHover": "#EE1155",
             "onSelect": "#EE1155"
         }
@@ -26,7 +26,9 @@
             "warn": "#84410b",
             "toolBarBG": "#E6E6E6",
             "toolBarText": "#FFFFFF",
-            "defaultThemeMode": "dark",
+            "footerBG": "#f1f1f1",
+            "footerText": "#000",
+            "defaultThemeMode": "light",
             "onHover": "#1c0425",
             "onSelect": "#1c0425"
         }
@@ -42,7 +44,7 @@
             "warn": "#FFFF00",
             "toolBarBG": "#E6E6E6",
             "toolBarText": "#FFFFFF",
-            "defaultThemeMode": "dark",
+            "defaultThemeMode": "light",
             "onHover": "#84410b",
             "onSelect": "#84410b"
         }
@@ -53,11 +55,13 @@
             "theme": "dynamic-theme",
             "label": "DYN-1",
             "isActive": true,
-            "primary": "#E3D87E",
+            "primary": "#827400",
             "accent": "#748067",
             "warn": "#FFFF00",
-            "toolBarBG": "#bFbFbF",
+            "toolBarBG": "#827404",
             "toolBarText": "#FFFFFF",
+            "footerBG": "#212121",
+            "footerText": "#FFF",
             "defaultThemeMode": "light",
             "onHover": "#fdac00",
             "onSelect": "#fdac00"

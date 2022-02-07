@@ -78,7 +78,7 @@ export class SidebarComponentComponent implements OnInit, AfterViewInit {
   price = 858.65;
   dateNow = new Date();
   toggleControl = this.themeService.currentThemeMode;
- 
+ count =2;
   constructor(
     router: Router,
     private app: AppService,

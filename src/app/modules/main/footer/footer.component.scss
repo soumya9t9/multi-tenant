@@ -1,8 +1,9 @@
 .footer {
-    background: #212121;
-    background: var(--a700);
+    // background: #212121;
+    // background: var(--footer-bg, var(--a700, #212121));
+    background: var(--footer-bg, #f1f1f1);
     padding: 8px 10px;
-    color: white;
+    color: var(--footer-text, #000);
 }
 .footer-wrapper {
     display: flex;

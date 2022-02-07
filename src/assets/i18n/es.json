@@ -1,7 +1,7 @@
 {
     "_MAIN": {
-        "selectLang": "select language",
-        "selectCurrency": "select currency",
+        "selectLang": "Vali keel",
+        "selectCurrency": "Vali valuuta",
         "translate": "Traduciremos la información más importante para tu navegación, compras y comunicaciones. Las traducciones se proporcionan por propósitos de conveniencia. La versión en inglés de Amazon.com, incluyendo nuestras Condiciones de uso, es la versión definitiva. Más información"
     },
     "_HOME": {
@@ -9,5 +9,7 @@
         "descMultiTenant": "Multi-luado estas arkitekturo en kiu ununura kazo de programaro servas plurajn klientojn. Ĉiu kliento estas nomita luanto. ... Tiamaniere, programaro en plurluanta arkitekturo povas kunhavigi dediĉitan ekzemplon de agordoj, datumoj, uzantadministrado kaj aliaj propraĵoj.",
         "dashboard": "Paneloj",
         "noDataFound": "Neniuj Datumoj Trovita"
-    }
+    },
+    "things": "There {count, plural, =0{is} one{is} other{are}} {count, plural, =0{} one{a} other{several}} {count, plural, =0{nothing} one{thing} other{things}}",
+    "people": "{gender, select, male{He is} female{She is} other{They are}} {how}"
 }

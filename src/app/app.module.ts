@@ -10,8 +10,6 @@ import { MainModule } from './modules/main/main.module';
 import { UserManagementModule } from './modules/user-management/user-management.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeModule } from './modules/home/home.module';
-import { TranslateUIModule } from './modules/translate-ui/translate-ui.module';
-import { CurrencyProxyPipe } from './currency-proxy.pipe';
 import { CustomDateModule } from './shared/custom-date/custom-date.module';
 import { LangSettingsService } from './lang-settings.service';
 import { TranslateService } from '@ngx-translate/core';
@@ -33,7 +31,6 @@ frenchConfig.setLocale(enIN);
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    TranslateUIModule,
     MainModule,
     UserManagementModule,
     HomeModule,

@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateCompiler, TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { MESSAGE_FORMAT_CONFIG, TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
 
 
 export function createTranslateLoader(http: HttpClient) {
@@ -19,6 +20,11 @@ const IM_EX :any= [
           provide: TranslateLoader,
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
+        },
+        // defaultLanguage:"en",
+        compiler: {
+          provide: TranslateCompiler,
+          useClass: TranslateMessageFormatCompiler
         }
       }),
 ]
@@ -28,6 +34,9 @@ const IM_EX :any= [
     CommonModule,
     ...IM_EX
   ],
-  exports: IM_EX
+  exports: IM_EX,
+  providers: [
+    { provide: MESSAGE_FORMAT_CONFIG, useValue: { locales: ['en', 'fr', 'hi', 'es', 'pt', 'de'] }}
+  ]
 })
 export class TranslateUIModule { }

@@ -1,12 +1,14 @@
 {
     "_MAIN": {
-        "selectLang": "select language",
-        "selectCurrency": "select currency",
+        "selectLang": "selecteer taal",
+        "selectCurrency": "Selecteer valuta",
         "translate": "We'll translate the most important information for your browsing, shopping, and communications. Our translations are provided for your convenience. The English version of Amazon.com, including our Conditions of Use, is the definitive version. Learn more"
     },"_HOME": {
         "aboutMultiTenant": "Over meerdere huurders",
         "descMultiTenant": "Multi-tenancy is een architectuur waarin een enkele instantie van een softwaretoepassing meerdere klanten bedient. Elke klant wordt een huurder genoemd. ... Op deze manier kan een softwareapplicatie in een multi-tenant architectuur een dedicated instance van configuraties, data, gebruikersbeheer en andere eigenschappen delen.",
         "dashboard": "Dashboard",
         "noDataFound": "Geen data gevonden"
-    }
+    },
+    "things": "There {count, plural, =0{is} one{is} other{are}} {count, plural, =0{} one{a} other{several}} {count, plural, =0{nothing} one{thing} other{things}}",
+    "people": "{gender, select, male{He is} female{She is} other{They are}} {how}"
 }

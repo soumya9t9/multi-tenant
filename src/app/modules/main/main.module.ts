@@ -17,12 +17,17 @@ import { CurrencyLangComponent } from './currency-lang/currency-lang.component';
 import { CustomDateModule } from 'src/app/shared/custom-date/custom-date.module';
 import { CurrencyProxyPipe } from 'src/app/currency-proxy.pipe';
 import { LangSettingsService } from 'src/app/lang-settings.service';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateCompiler, TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { DateFnsConfigurationService, DateFnsModule } from 'ngx-date-fns';
 import { enIN } from 'date-fns/locale';
 import { CustomDatePipe } from 'src/app/custom-date.pipe';
+import { MESSAGE_FORMAT_CONFIG, TranslateMessageFormatCompiler } from 'ngx-translate-messageformat-compiler';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
+export function HttpLoaderFactory(httpClient: HttpClient) {
+  return new TranslateHttpLoader(httpClient);
+}
 const frenchConfig = new DateFnsConfigurationService();
 frenchConfig.setLocale(enIN);
 
@@ -51,9 +56,21 @@ const COMPONENTS = [
     ReactiveFormsModule,
     MaterialsModule,
     MatIconModule,
-    TranslateUIModule,
+    // TranslateUIModule,
     CustomDateModule,
-    DateFnsModule
+    DateFnsModule,
+
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      compiler: {
+        provide: TranslateCompiler,
+        useClass: TranslateMessageFormatCompiler
+      }
+    })
   ],
   providers: [
     { provide: DEFAULT_CURRENCY_CODE,
@@ -66,8 +83,12 @@ const COMPONENTS = [
       useFactory: (langSettingsService:LangSettingsService) => langSettingsService.selectedCurrency || "INR"   //returns locale string
       // useValue: 'INR' 
     },
-    { provide: DateFnsConfigurationService, useValue: frenchConfig }
-    
+    { provide: DateFnsConfigurationService, useValue: frenchConfig },
+    { provide: MESSAGE_FORMAT_CONFIG, useValue: { 
+      locales: ['en', 'fr', 'hi', 'es', 'pt', 'de'],
+      disablePluralKeyChecks:false,
+      multi:true
+    }}
   ],
   exports: [ COMPONENTS]
 })

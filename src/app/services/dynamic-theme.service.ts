@@ -26,6 +26,9 @@ export interface ThemeModel {
   defaultThemeMode?:string,
   onHover?:string,
   onSelect?:string,
+
+  footerBG?: string,
+  footerText?: string,
 }
 
 @Injectable({
@@ -33,7 +36,7 @@ export interface ThemeModel {
 })
 export class DynamicThemeService {
 
-  l = {
+  l:ThemeModel = {
     "id": 11,
     "theme": "default-theme",
     "label": "Default",
@@ -43,6 +46,8 @@ export class DynamicThemeService {
     "warn": null,
     "toolBarBG": "#000000",
     "toolBarText": "#FFFFFF",
+    "footerBG": "#f1f1f1",
+    "footerText": "#000",
     "defaultThemeMode": "light",
     "onHover": null,
     "onSelect": null
@@ -131,6 +136,12 @@ export class DynamicThemeService {
 
       this.saveHoverColor(theme.onHover, theme);
       this.saveSelectedBGColor(theme.onSelect, theme);
+
+      this.saveHeaderFooterColor(theme.toolBarBG, theme, '--bg-app-bar');
+      this.saveHeaderFooterColor(theme.toolBarText, theme, '--text-app-bar');
+      this.saveHeaderFooterColor(theme.footerBG, theme, '--footer-bg');
+      this.saveHeaderFooterColor(theme.footerText, theme, '--footer-text');
+
     }
     this.applyTheme();
   }
@@ -154,6 +165,12 @@ export class DynamicThemeService {
 
   isDarkMode(): boolean {
     return this.currentThemeMode === "dark"
+  }
+
+  saveHeaderFooterColor(colorCode:any, theme:ThemeModel, variableName){
+    if(colorCode && variableName) {
+      this.document.body.style.setProperty(variableName, colorCode);
+    }
   }
 
   saveHoverColor(colorCode:any, theme:ThemeModel){

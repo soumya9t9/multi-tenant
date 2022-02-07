@@ -56,6 +56,20 @@
           {{dateNow | dfnsFormatDistanceToNow}}
           {{dateNow | dfnsFormat: "dd/MM/yyyy"}}
           {{dateNow | customDate}}
+
+          <ul>
+            <li translate [translateParams]="{ count: 0 }">things</li>
+            <li translate [translateParams]="{ count: 1 }">things</li>
+            <li>{{'things' | translate:"{ count: 2 }"}}</li>
+          </ul>
+          <ul>
+            <li translate [translateParams]="{ gender: 'female', how: 'influential' }">people</li>
+            <li translate [translateParams]="{ gender: 'male', how: 'funny' }">people</li>
+            <li>{{'people' | translate:"{ how: 'affectionate' }"}}</li>
+          </ul>
+          <p>{{'demo' | translate:'{item: "bagha"}'}}</p>
+          <p>{{'thing' | translate:"{ count: 0 }"}}</p>
+
           <!-- {{dateNow |   }} -->
           <!-- {{ dateNow | date : "dd/MM/yyy" : :translateService.currentLang }} -->
         </mat-card>

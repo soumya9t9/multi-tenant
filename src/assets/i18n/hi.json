@@ -1,7 +1,7 @@
 {
     "_MAIN": {
-        "selectLang": "select language",
-        "selectCurrency": "select currency",
+        "selectLang": "भाषा का चयन करें",
+        "selectCurrency": "मुद्रा चुनें",
         "translate": "हम आपके ब्राउज़िंग, खरीदारी और संचार के लिए सबसे महत्वपूर्ण जानकारी का अनुवाद करेंगे। आपकी सुविधा के लिए हमारे अनुवाद उपलब्ध कराए गए हैं। Amazon.com का अंग्रेजी संस्करण, हमारी उपयोग की शर्तों सहित, निश्चित संस्करण है। और अधिक जानें"
     },
     "_HOME": {
@@ -9,5 +9,7 @@
         "descMultiTenant": "मल्टी-टेनेंसी एक आर्किटेक्चर है जिसमें एक सॉफ्टवेयर एप्लिकेशन का एक उदाहरण कई ग्राहकों को सेवा प्रदान करता है। प्रत्येक ग्राहक को किरायेदार कहा जाता है। ... इस तरह, एक बहु-किरायेदार आर्किटेक्चर में एक सॉफ़्टवेयर एप्लिकेशन कॉन्फ़िगरेशन, डेटा, उपयोगकर्ता प्रबंधन और अन्य गुणों का एक समर्पित उदाहरण साझा कर सकता है।",
         "dashboard": "डैशबोर्ड",
         "noDataFound": "डाटा प्राप्त नहीं हुआ"
-    }
+    },
+    "things": "There {count, plural, =0{is} one{is} other{are}} {count, plural, =0{} one{a} other{several}} {count, plural, =0{nothing} one{thing} other{things}}",
+    "people": "{gender, select, male{He is} female{She is} other{They are}} {how}"
 }
